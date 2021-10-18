@@ -1,0 +1,71 @@
+<app-meniu>
+    
+</app-meniu>
+
+<div class="container">
+
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Selectati din filtrele de mai jos </h2>
+        <br>
+        <section class="example-section">
+          <label class="example-margin" >Categorie Produs:</label>
+          <mat-select  matNativeControl [(ngModel)]="Categorie" (keyup.enter)="filtruProduse()" >
+            <mat-option class="example-margin" value="Aparate">Aparate electrice</mat-option>
+            <mat-option class="example-margin" value="Actionari">Actionari electrice</mat-option>
+          </mat-select>
+        </section>
+        <br>
+        <section class="example-section" [(ngModel)]="Producator" (keyup.enter)="filtruProduse()">
+          <label class="example-margin">Dupa producator:</label>
+          <mat-select  matNativeControl >
+            <mat-option class="example-margin" value="3M" >3M</mat-option>
+            <mat-option class="example-margin" value="AEM">AEM</mat-option>
+          </mat-select>
+        </section>
+        <br>
+        <section class="example-section">
+          <label class="example-margin">Dupa id produs:</label>
+
+              <input class="form-control" type="search" id="search1" mdbInput [(ngModel)]="ID" (keyup.enter)="filtruProduse()">
+              {{ID}}
+         
+        </section>
+        <br>
+
+        <section class="example-section">
+          <label class="example-margin" >Ordonare Alfabetica:</label>
+          <mat-select matNativeControl [(ngModel)]="Ordonare" (keyup.enter)="filtruProduse()">
+            <mat-option class="example-margin" value="crescator">A-Z</mat-option>
+            <mat-option class="example-margin" value="descrescator">Z-A</mat-option>
+          </mat-select>
+        </section>
+        <br>
+        <section class= "buton-search">
+          <button mat-raised-button color="accent" >Cauta Produse</button>
+        </section>
+      </mat-card-content>
+    </mat-card>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                       
+                  ProductID</th>
+    
+                <th>
+                 
+                  ProductName</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dataItem of ProductList">
+                <td>{{dataItem.ProdusId}}</td>
+                <td>{{dataItem.NumeProdus}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { ProduseCautareComponent } from './produse-cautare/produse-cautare.component';
+const routes: Routes = [
+  {path: 'produseCautare',component:ProduseCautareComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
